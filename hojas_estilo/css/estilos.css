@@ -1,0 +1,36 @@
+/*En un archivo css externo, no se incluye la etiqueta Style */
+h1{
+	color:#eeb70c;
+}
+
+body{
+	background-image: url(../img/bg.jpg);
+	/*Con ../ se retrocede una carpeta */
+	background-position: center center;
+	/*background-size: cover;*/
+	background-attachment: fixed;
+}
+
+p{
+	color:blue;
+}
+/*En CSS para hacer referencia a un ID se utiliza el simbolo numeral #*/
+#parrafo1{
+	color:red;
+}
+
+#contenido{
+	background-color:rgba(20,20,20,0.5); 
+	border:1px #ffffff solid; 
+	padding:50px; 
+	margin:50px;
+	color:#FFF;
+}
+/*Para definir una clase CSS se utiliza el punto (.)*/
+.parrafo-verde{
+	color:green;
+}
+
+.parrafo-amarillo{
+	color:yellow;
+}

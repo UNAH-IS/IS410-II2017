@@ -1,0 +1,23 @@
+CSS (Cascading StyleSheets)
+
+Incluir CSS en una documento HTML
+*En Linea: Para aplicar este tipo de estilo se utiliza la propiedad Style.
+*En el encabezado:Se utiliza la etiqueta style.
+*Incluyendo un archivo externo
+
+La sintaxis CSS se basa en el uso de selectores, estos pueden ser:
+
+*Nombre de Etiquetas
+*IDs
+*Clases CSS
+
+En el caso de CSS en linea no se utilzan selectores.
+
+Sintaxis CSS:
+
+SELECTOR{
+	propiedad1:valor1;
+	propiedad2:valor2;
+	...
+	propiedadN:valorN;
+}
