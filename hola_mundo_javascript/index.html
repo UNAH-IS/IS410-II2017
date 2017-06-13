@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hola Mundo</title>
+</head>
+<body>
+	<div style="background-color: #000;color:#fff;" onclick="alert('Se hizo click en el div')">
+		Etiqueta div con funcionalidad click
+	</div>
+	<input type="button" value="Enviar" onclick="alert('Le dio click al boton enviar');">
+	<button type="button" onclick="enviarDatos('Hola','Mundo');">Enviar</button>
+
+	<div style="background-color: #000;color:#fff;" onmouseover="mouseOver();" onmouseenter="mouseEnter();" onmouseleave="mouseLeave();">
+		Etiqueta div con funcionalidad click
+	</div>
+	<br><br>
+	<input type="text" id="txt-nombre" name="txt-nombre">
+	<button type="button" onclick="mostrarNombre();">Mostrar nombre</button>
+	<script>
+		//Comentario de una linea
+		/*
+		Comentario de multiples lineas
+
+		*/
+		var a;
+		/*
+			int
+			boolean
+			double
+			object
+			null
+			undefinied
+			--typeof()
+		*/
+		for (var i = 1; i <= 10; i++) {
+			document.write("<b>Hola Mundo</b><br>");
+		}
+		alert("Hola Mundo en un cuadro de dialogo");
+		console.log("Hola mundo desde la consola de javascript");	
+
+		function enviarDatos(a,b){
+			alert("Se enviara los datos : " + a +" y " + b); 
+		}
+		function mouseOver(){
+			console.log("Evento mouse Over");
+		}
+
+		function mouseEnter(){
+			console.log("Evento mouse Enter");
+		}
+
+		function mouseLeave(){
+			console.log("Evento mouse Leave");
+		}
+
+		function mostrarNombre(){
+			alert("Valor ingresado: " + document.getElementById("txt-nombre").value);
+		}
+
+	</script>
+</body>
+</html>
