@@ -2,8 +2,52 @@
 <html>
 <head>
 	<title></title>
+	<style type="text/css">
+		.contenido-cool{
+			background-color: green;
+			color:pink;
+		}
+	</style>
 </head>
 <body>
-<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<input type="text" name="txt-nombre" id="txt-nombre">
+	<input type="button" value="Mostrar nombre" onclick="mostrarNombre();">
+	<input type="button" value="Asignar nombre" onclick="asignarNombre();">
+	<div id="div-contenido" style="background-color: #000; color:#fff;">Contenido div</div>
+	<button type="button" onclick="cambiarContenidoDiv();">Cambiar contenido div</button>
+	<button type="button" onclick="cambiarEstilos();">Cambiar estilo div</button>
+	<button type="button" onclick="asignarClaseCSS();">Asignar clase CSS</button>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		function mostrarNombre(){	
+			alert($("#txt-nombre").val());
+			//document.getElementById("txt-nombre").value;
+		}
+		function asignarNombre(){
+			$("#txt-nombre").val("Matusalen");
+		}
+		function cambiarContenidoDiv(){
+			$("#div-contenido").html("Este es el nuevo contenido de la etiquetda div :V");
+			//document.getElementById("div-contenido").innerHTML = "Contenido";
+		}
+		function cambiarEstilos(){
+			$("#div-contenido").css("background-color","#ff0000");
+			$("#div-contenido").css("color","#0000ff");
+		}
+
+		function asignarClaseCSS(){
+			$("#div-contenido").addClass("contenido-cool");
+		}
+
+		function sumar(a,b,c){
+			if (c ==undefined)
+				return a+b;
+			else
+				return a+b+c;
+		}
+
+		alert(sumar(1,2));
+		alert(sumar(1,2,3));
+	</script>	
 </body>
 </html>
