@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<select id = "lista">
+	</select>
+	<script type="text/javascript">
+		var arreglo =[];
+		arreglo[0]="Opcion 1";
+		arreglo[1]="Opcion 2";
+		arreglo[2]="Opcion 3";
+		arreglo[3]="Opcion 4";
+		arreglo[4]="Opcion 5";
+
+		for (var i = 0; i < arreglo.length; i++) {
+			document.getElementById("lista").innerHTML += "<option>"+arreglo[i]+"</option>";
+		}
+
+/*
+		document.getElementById("div-aplicaciones").innerHTML+=
+				'<div class="">'+
+					'<div class="well">'+
+					'<img src="'++'" class="img-responsive">'+
+					'<b>#NOMBRE_APLICACION# </b><br>'+
+					'<span class="label label-primary">#CALIFICACION#</span>'+
+					'<span class="glyphicon glyphicon-star" aria-hidden="true"></span><br>'+
+					'#DESCRIPCION#<br>'+
+					'Versión: <b>#VERSION_APLICACION#</b><br>'+
+					'<a href="#">Descargar</a>'+
+					'</div>'+
+					'</div>';*/
+	</script>
+</body>
+</html>
