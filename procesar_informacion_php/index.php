@@ -1,3 +1,11 @@
+<?php
+ 	//isset verifica si una variable en PHP tiene valor.
+	if (isset($_POST["txt-email"]) && $_POST["txt-password"]){
+		$archivo = fopen("archivo.csv","a+"); //r: read, w: write, a+: Append
+		fwrite($archivo,  $_POST["txt-email"] . "," . $_POST["txt-password"]."\n");
+		fclose($archivo);
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +15,24 @@
 <body>
 	<!-- Button trigger modal -->
 	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-	  Launch demo modal
+	  Agregar usuario
 	</button>
+
+	<?php 
+
+		$archivo = fopen("archivo.csv", "r");
+		echo '<table class="table table-striped table-hover">';
+		echo '<tr><th>Nombre</th><th>Contraseña</th></tr>';
+		while(!feof($archivo)){
+			$linea = fgets($archivo);
+			if ($linea != ''){
+				$partes = explode(",", $linea);
+				echo "<tr><td>".$partes[0]."</td><td>".$partes[1]."</td></tr>";
+			}	
+		}
+		echo "</table>";
+		fclose($archivo);
+	?>
 
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -19,7 +43,7 @@
 	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
 	      </div>
 	      <div class="modal-body">
-	        	<form class="form-signin" method="GET" action="procesar.php">
+	        	<form class="form-signin" method="POST" action="index.php?otro-parametro=valor">
 			        <h2 class="form-signin-heading">Please sign in</h2>
 			        <label for="inputEmail" class="sr-only">Email address</label>
 			        <input type="text" id="txt-email" name="txt-email" class="form-control" placeholder="Email address" required autofocus>
@@ -30,7 +54,7 @@
 			            <input type="checkbox" value="remember-me"> Remember me
 			          </label>
 			        </div>
-			        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			        <button class="btn btn-lg btn-primary btn-block" type="submit">Agregar usuario</button>
 			     </form>
 	      </div>
 	      <div class="modal-footer">
