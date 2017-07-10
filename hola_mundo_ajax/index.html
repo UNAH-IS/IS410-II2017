@@ -7,25 +7,32 @@
 	<input type="text" name="txt-email" id="txt-email" placeholder="Email">
 	<input type="password" name="txt-password" id="txt-password" placeholder="Password">
 	<button type="button" id="btn-guardar">Guardar usuario</button>
+	<img id = "img-loading" src = "img/loading.gif" style="display:none;">
+	<div id="div-respuesta" ></div>
 	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	
 	<script type="text/javascript">
 		$("#btn-guardar").click(function(){
+			$("#img-loading").show();
+			//URLEncoded
 			var parametros=	"txt-email="+$("#txt-email").val() + "&"+
 							"txt-password=" + $("#txt-password").val();
-			alert(parametros);
+			//alert(parametros);
 			$.ajax({
 				url: 'procesar.php',
 				method: 'POST',
 				data: parametros, //UrlEncoded,JSON, FormData
 				dataType: 'html', // Formato de respuesta
-				success:function(respuesta){
-					alert(respuesta);
-				},
-				error:function(error){
-					alert(error);
-				}
-			});
-		});
+					success:function(respuesta){
+						$("#div-respuesta").html(respuesta);
+						$("#img-loading").hide();
+					},
+					error:function(error){
+						alert(error);
+					}
+				});
+				alert("Ya se envio la informacion.");
+			});			
 	</script>
 </body>
 </html>
